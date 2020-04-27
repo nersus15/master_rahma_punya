@@ -12,6 +12,17 @@
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 
+    <?php
+    $multi = $this->session->userdata('id_status');
+    if ($_SESSION['admin']) {
+    }
+    ?>
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Administrator
+    </div>
+
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
         <a class="nav-link" href="index.html">
@@ -22,34 +33,21 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Heading -->
-    <!-- <div class="sidebar-heading">
-        User
-      </div> -->
-
-    <!-- Nav Item - Charts -->
-    <!-- <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-user-circle"></i>
-          <span>My Profile</span></a>
-      </li> -->
-
-    <!-- Divider -->
-    <!-- <hr class="sidebar-divider"> -->
-
-
-    <!-- Nav Item - Pages Collapse Menu -->
+    <!-- Nav Item - Data Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
-            aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+            aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-cog"></i>
             <span>Data</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Input</h6>
-                <a class="collapse-item" href="buttons.html">Bidang</a>
-                <a class="collapse-item" href="buttons.html">Sub Bidang</a>
+                <a class="collapse-item" href="utilities-color.html">Tahun</a>
+                <a class="collapse-item" href="utilities-color.html">Bidang</a>
+                <a class="collapse-item" href="utilities-border.html">Sub Bidang</a>
+                <a class="collapse-item" href="utilities-animation.html">Usulan</a>
+
             </div>
         </div>
     </li>
@@ -62,7 +60,7 @@
     <li class="nav-item">
         <a class="nav-link" href="charts.html">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
+            <span>RKP</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
