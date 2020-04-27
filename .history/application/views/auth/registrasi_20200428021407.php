@@ -24,13 +24,13 @@
                                 <label for="" class="control-label">Jenis Kelamin</label>       
                                 <div class="input-group col-sm-7">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="jenisKelamin" id="jkl" value="lk" checked>
+                                        <input class="form-check-input" type="radio" name="jenisKelamin" id="jkl" checked>
                                         <label class="form-check-label" for="jkl">
                                             Laki Laki
                                         </label>
                                     </div>
-                                    <div class="form-check ml-2">
-                                        <input class="form-check-input" type="radio" name="jenisKelamin" value="pr" id="jkp">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="jenisKelamin" id="jkp">
                                         <label class="form-check-label" for="jkp">
                                             Perempuan
                                         </label>

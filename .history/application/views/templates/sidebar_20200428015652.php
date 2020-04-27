@@ -37,15 +37,11 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Input</h6>
-                <?php 
-                    $userdata = $this->session->userdata();
-                    if($userdata['user-data']['role'] == 1):
-                ?>
                 <a class="collapse-item" href="utilities-color.html">Tahun</a>
                 <a class="collapse-item" href="utilities-color.html">Bidang</a>
                 <a class="collapse-item" href="utilities-border.html">Sub Bidang</a>
-                <?php endif ?>
                 <a class="collapse-item" href="utilities-animation.html">Usulan</a>
+
             </div>
         </div>
     </li>

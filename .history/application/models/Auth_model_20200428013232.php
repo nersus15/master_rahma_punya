@@ -10,7 +10,7 @@ class Auth_model extends CI_Model
         $data = [
             'username' => htmlspecialchars($this->input->post('name', true)),
             'email' => htmlspecialchars($this->input->post('email', true)),
-            'image' => $this->input->post('jenisKelamin') == 'lk' ? 'defaultL.jpg' : 'defaultP.jpg',
+            'image' => 'default.jpg',
             'password' => password_hash(
                 $this->input->post('password1'),
                 PASSWORD_DEFAULT

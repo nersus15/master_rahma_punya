@@ -1,3 +1,8 @@
+<?php
+    $userdata = $this->session->userdata();
+
+?>
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -6,14 +11,14 @@
     <div class="card mb-3" style="max-width: 540px;">
         <div class="row no-gutters">
             <div class="col-md-4">
-                <img src="..." class="card-img">
+                <img src="<?= base_url('assets/img/profile/'.$userdata['user-data']['image']) ?>" class="card-img">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title"><?= $user['username']; ?></h5>
                     <p class="card-text"><?= $user['email']; ?></p>
                     <p class="card-text"><small class="text-muted">Member
-                            Since <?= date('d F Y', $user['date_created']); ?></small></p>
+                            Since <?= substr($userdata['user-data']['date_created'], 0, 10) ?></small></p>
                 </div>
             </div>
         </div>

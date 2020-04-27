@@ -10,13 +10,14 @@ class Auth_model extends CI_Model
         $data = [
             'username' => htmlspecialchars($this->input->post('name', true)),
             'email' => htmlspecialchars($this->input->post('email', true)),
-            'image' => $this->input->post('jenisKelamin') == 'lk' ? 'defaultL.jpg' : 'defaultP.jpg',
+            'image' => 'default.jpg',
             'password' => password_hash(
                 $this->input->post('password1'),
                 PASSWORD_DEFAULT
             ),
+            'id_status' => 2,
             'is_active' => 1,
-            'role' => 2, // 1 Admin, 2 User // Jika registrasi sendiri maka otomatis role = 2, user admin hanya bisa dibuat oleh admin lain
+            'date_created' => time()
         ];
         $this->db->insert('tbl_user', $data);
     }
