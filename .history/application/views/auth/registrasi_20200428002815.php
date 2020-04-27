@@ -20,23 +20,6 @@
                                     placeholder="Email Address" autocomplete="off" value="<?= set_value('email'); ?>">
                                 <?= form_error('email', ' <small class="text-danger pl-3">', '</small>'); ?>
                             </div>
-                            <div class="form-group">
-                                <label for="" class="control-label">Jenis Kelamin</label>       
-                                <div class="input-group col-sm-7">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="jenisKelamin" id="jkl" value="lk" checked>
-                                        <label class="form-check-label" for="jkl">
-                                            Laki Laki
-                                        </label>
-                                    </div>
-                                    <div class="form-check ml-2">
-                                        <input class="form-check-input" type="radio" name="jenisKelamin" value="pr" id="jkp">
-                                        <label class="form-check-label" for="jkp">
-                                            Perempuan
-                                        </label>
-                                    </div>    
-                                </div>                         
-                            </div>
                             <div class=" form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <input type="password" class="form-control form-control-user" id="password1"
