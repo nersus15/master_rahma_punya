@@ -2,10 +2,10 @@
 -- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 27, 2020 at 06:11 PM
+-- Host: localhost
+-- Generation Time: Apr 27, 2020 at 08:32 PM
 -- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.10
+-- PHP Version: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `desa_tamansari`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profil`
+--
+
+CREATE TABLE `profil` (
+  `id` varchar(30) NOT NULL,
+  `nama_lengkap` varchar(100) NOT NULL,
+  `alamat` varchar(200) NOT NULL,
+  `no_hp` varchar(14) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -104,18 +117,19 @@ CREATE TABLE `tbl_user` (
   `email` varchar(128) NOT NULL,
   `image` varchar(128) DEFAULT '',
   `password` varchar(256) DEFAULT '',
-  `id_status` int(11) NOT NULL,
+  `role` int(2) NOT NULL,
   `is_active` int(1) NOT NULL,
-  `date_created` int(11) NOT NULL
+  `profil` int(30) NOT NULL,
+  `date_created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_user`
 --
 
-INSERT INTO `tbl_user` (`Id_user`, `username`, `email`, `image`, `password`, `id_status`, `is_active`, `date_created`) VALUES
-(1, 'rizka', 'rizka@gmail.com', 'default.jpg', '$2y$10$MmsEjDaIR06mEGkDPUnA7uhpbl.eIO2n3.7.C2wnwdY75YBKY1Pzq', 1, 1, 1587882520),
-(2, 'rahma', 'rahma@gmail.com', 'default.jpg', '$2y$10$FTIDiM0U36Ax1ICvIqk.Eelhls2L231/U.9C2Rb3Xow/gCxmAOwvW', 2, 1, 1587882543);
+INSERT INTO `tbl_user` (`Id_user`, `username`, `email`, `image`, `password`, `role`, `is_active`, `profil`, `date_created`) VALUES
+(4, 'fathurrahman', 'fathur.ashter15@gmail.com', 'defaultL.jpg', '$2y$10$YOrQT5.rh8Jh/OxmadOtXe7xoXQ19B5oRgHWFjY5QbwHtKYHXR6Hm', 2, 1, 0, '2020-04-27 18:18:12'),
+(5, 'fathurrahman', 'fathur.pashter15@gmail.com', 'defaultL.jpg', '$2y$10$YOrQT5.rh8Jh/OxmadOtXe7xoXQ19B5oRgHWFjY5QbwHtKYHXR6Hm', 1, 1, 0, '2020-04-27 18:18:07');
 
 -- --------------------------------------------------------
 
@@ -158,6 +172,12 @@ INSERT INTO `user_status` (`id`, `status`) VALUES
 --
 
 --
+-- Indexes for table `profil`
+--
+ALTER TABLE `profil`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_bidang`
 --
 ALTER TABLE `tbl_bidang`
@@ -188,8 +208,7 @@ ALTER TABLE `tbl_tahun`
 -- Indexes for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  ADD PRIMARY KEY (`Id_user`),
-  ADD KEY `fk_user` (`id_status`);
+  ADD PRIMARY KEY (`Id_user`);
 
 --
 -- Indexes for table `tbl_usulan`
@@ -231,7 +250,7 @@ ALTER TABLE `tbl_tahun`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `Id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_usulan`
@@ -260,12 +279,6 @@ ALTER TABLE `tbl_rkp`
 --
 ALTER TABLE `tbl_sub_bidang`
   ADD CONSTRAINT `fk_sub_bidang` FOREIGN KEY (`id_bidang`) REFERENCES `tbl_bidang` (`id_bidang`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `tbl_user`
---
-ALTER TABLE `tbl_user`
-  ADD CONSTRAINT `fk_user` FOREIGN KEY (`id_status`) REFERENCES `user_status` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `tbl_usulan`
